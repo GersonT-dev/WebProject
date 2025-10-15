@@ -1,3 +1,20 @@
+// JavaScript source code
+console.log("Hello World!" + `    this 
+
+
+id  so fun ${34}`);
+
+console.log(3 / 2);
+
+if (true) {
+    let x = 6;
+    const y = 8;
+    var z = 8;
+    console.log(x + y + z);
+
+    console.log("This is true");
+  
+}
 document.addEventListener("DOMContentLoaded", () => {
   const main = document.querySelector("main");
   main.innerHTML = "";
@@ -28,8 +45,4 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `;
 });
-Sent from my iPhone
 
-> On Oct 15, 2025, at 6:50 PM, Gerson Turcios <turciosg@cua.edu> wrote:
->
-> ﻿// Individual car objects

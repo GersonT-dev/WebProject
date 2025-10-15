@@ -4,7 +4,7 @@ console.log("Hello World!" + `    this
 
 id  so fun ${34}`);
 
-console.log(3 / 2);
+console.log(4 / 2);
 
 if (true) {
     let x = 6;

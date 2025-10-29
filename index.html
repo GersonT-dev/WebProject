@@ -4,23 +4,45 @@
   <meta charset="UTF-8">
   <title>JDM Legends</title>
   <style>
-    body { font-family: Arial, sans-serif; }
-    #car-list div { margin-bottom: 2em; }
-    #car-list img { max-width: 300px; display: block; margin-bottom: 0.5em; }
-    #contact { margin-top: 2em; }
-    #social { margin-top: 2em; }
+    body { font-family: Arial, sans-serif; background: #ffeedd; margin: 0; }
+    h1 { text-align: center; font-size: 4em; margin: 0.2em 0; color: #b22222; font-style: italic;}
+    #main-bar { background: #ffeedd; padding: 1em; display: flex; justify-content: center; gap: 2em; border: 2px solid black; }
+    .contact-box { border: 2px solid black; padding: 0.5em; background: #fff; }
+    .social-box { border: 2px solid black; padding: 0.5em; background: #fff; display: flex; flex-direction: column; align-items: center; }
+    #car-list { margin: 2em auto; max-width: 900px; }
+    #car-list div { margin-bottom: 2em; background: #fff; border-radius: 12px; padding: 1em; box-shadow: 0 2px 8px #ccc; }
+    #car-list img { max-width: 300px; display: block; margin-bottom: 0.5em; border-radius: 4px; }
+    .background-img { width: 100vw; height: 40vh; object-fit: cover; display: block; margin: 0 auto 2em auto; }
   </style>
 </head>
 <body>
-  <h1>Legendary JDM Cars</h1>
+  <h1>JDM Legends</h1>
+  <div id="main-bar">
+    <div class="contact-box">
+      <div>Email: <a id="email-link" href="#">Email</a></div>
+      <div>Phone: <span id="phone-txt"></span></div>
+    </div>
+    <div class="social-box">
+      <span>Socials:</span>
+      <img id="social-img" src="" alt="" style="max-width:120px;">
+    </div>
+  </div>
+  <img class="background-img" src="images/background.jpg" alt="Background image">
   <div id="car-list"></div>
-
-  <div id="contact"></div>
-  <div id="social"></div>
-
+  
   <!-- Load your data JS file first -->
   <script src="data/content.js"></script>
   <script>
+    // Render contact info
+    document.getElementById('email-link').textContent = contact.email;
+    document.getElementById('email-link').href = "mailto:" + contact.email;
+    document.getElementById('phone-txt').textContent = contact.phone;
+
+    // Render social image
+    const socialImg = document.getElementById('social-img');
+    socialImg.src = socialImage.imageUrl;
+    socialImg.alt = socialImage.altText;
+
     // Render cars
     const carList = document.getElementById('car-list');
     cars.forEach(car => {
@@ -32,21 +54,6 @@
       `;
       carList.appendChild(carDiv);
     });
-
-    // Render contact info
-    const contactDiv = document.getElementById('contact');
-    contactDiv.innerHTML = `
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:${contact.email}">${contact.email}</a></p>
-      <p>Phone: ${contact.phone}</p>
-    `;
-
-    // Render social image
-    const socialDiv = document.getElementById('social');
-    socialDiv.innerHTML = `
-      <h2>Follow Us</h2>
-      <img src="${socialImage.imageUrl}" alt="${socialImage.altText}" style="max-width:200px;">
-    `;
   </script>
 </body>
 </html>

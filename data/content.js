@@ -1,6 +1,5 @@
 // data/content.js
 
-// 1. Define the 'cars' array
 const cars = [
   {
     name: "Skyline",
@@ -25,13 +24,11 @@ const cars = [
   }
 ];
 
-// 2. Define the 'contact' object
 const contact = {
   email: "turciosg@cua.edu",
   phone: "202-569-5702"
 };
 
-// 3. Define the 'socialImage' object
 const socialImage = {
   imageUrl: "images/social-media.jpg",
   altText: "Social media icons"

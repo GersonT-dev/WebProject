@@ -3,160 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <title>JDM Legends</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #ffeedd;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    .hero-section {
-      width: 100vw;
-      height: 40vh;
-      overflow: hidden;
-      position: relative;
-      background: #ffeedd;
-      border-bottom: 4px solid #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero-img {
-      width: 100vw;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    h1 {
-      font-family: 'Roboto', Arial, sans-serif;
-      font-size: 4em;
-      font-style: italic;
-      color: #b22222;
-      text-align: center;
-      margin: 0.2em 0 0.3em 0;
-      background: #ffeedd;
-      letter-spacing: 2px;
-      padding: 0.1em 0;
-      position: relative;
-      z-index: 2;
-    }
-    #car-list {
-      margin: 2em auto 2em auto;
-      max-width: 900px;
-      width: 90vw;
-      flex: 1;
-    }
-    #car-list .car-card {
-      margin-bottom: 2em;
-      background: #fff;
-      border-radius: 12px;
-      padding: 1em;
-      box-shadow: 0 2px 8px #ccc;
-      display: flex;
-      align-items: flex-start;
-      gap: 2em;
-    }
-    #car-list img {
-      max-width: 300px;
-      border-radius: 8px;
-      box-shadow: 0 1px 6px #aaa;
-    }
-    #car-list h2 {
-      margin-top: 0;
-      color: #a00;
-      font-family: 'Roboto', Arial, sans-serif;
-      font-style: italic;
-    }
-    #car-list p {
-      margin-bottom: 0;
-      font-size: 1.1em;
-    }
-    footer {
-      width: 100vw;
-      background: #ffeedd;
-      border-top: 4px solid #000;
-      padding: 2em 0 2em 0;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      gap: 3em;
-      align-items: flex-end;
-      position: relative;
-      z-index: 3;
-    }
-    .contact-box, .social-box {
-      border: 2px solid #000;
-      padding: 1em 2em;
-      background: #fff;
-      border-radius: 8px;
-      font-size: 1.1em;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 220px;
-      gap: 0.5em;
-    }
-    .social-box img {
-      max-width: 120px;
-    }
-    @media (max-width: 700px) {
-      h1 { font-size: 2em; }
-      #car-list .car-card { flex-direction: column; align-items: center; }
-      #car-list img { max-width: 90vw; }
-      footer { flex-direction: column; gap: 1em; padding: 1em 0;}
-      .contact-box, .social-box { min-width: unset; padding: 1em;}
-      .hero-section { height: 25vh; }
-    }
+    body { font-family: Arial, sans-serif; }
+    #car-list div { margin-bottom: 2em; }
+    #car-list img { max-width: 300px; display: block; margin-bottom: 0.5em; }
+    #contact { margin-top: 2em; }
+    #social { margin-top: 2em; }
   </style>
 </head>
 <body>
-  <div class="hero-section">
-    <img class="hero-img" src="images/background.jpg" alt="Background image">
-  </div>
-  <h1>JDM Legends</h1>
+  <h1>Legendary JDM Cars</h1>
   <div id="car-list"></div>
-  <footer>
-    <div class="contact-box">
-      <div>Email: <a id="email-link" href="#">Email</a></div>
-      <div>Phone: <span id="phone-txt"></span></div>
-    </div>
-    <div class="social-box">
-      <span>Socials:</span>
-      <img id="social-img" src="" alt="">
-    </div>
-  </footer>
-  
+
+  <div id="contact"></div>
+  <div id="social"></div>
+
+  <!-- Load your data JS file first -->
   <script src="data/content.js"></script>
   <script>
-    // Contact info
-    document.getElementById('email-link').textContent = contact.email;
-    document.getElementById('email-link').href = "mailto:" + contact.email;
-    document.getElementById('phone-txt').textContent = contact.phone;
-
-    // Social image
-    const socialImg = document.getElementById('social-img');
-    socialImg.src = socialImage.imageUrl;
-    socialImg.alt = socialImage.altText;
-
-    // Cars
+    // Render cars
     const carList = document.getElementById('car-list');
     cars.forEach(car => {
       const carDiv = document.createElement('div');
-      carDiv.className = "car-card";
       carDiv.innerHTML = `
+        <h2>${car.name}</h2>
         <img src="${car.imageUrl}" alt="${car.altText}">
-        <div>
-          <h2>${car.name}</h2>
-          <p>${car.description}</p>
-        </div>
+        <p>${car.description}</p>
       `;
       carList.appendChild(carDiv);
     });
+
+    // Render contact info
+    const contactDiv = document.getElementById('contact');
+    contactDiv.innerHTML = `
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:${contact.email}">${contact.email}</a></p>
+      <p>Phone: ${contact.phone}</p>
+    `;
+
+    // Render social image
+    const socialDiv = document.getElementById('social');
+    socialDiv.innerHTML = `
+      <h2>Follow Us</h2>
+      <img src="${socialImage.imageUrl}" alt="${socialImage.altText}" style="max-width:200px;">
+    `;
   </script>
 </body>
 </html>

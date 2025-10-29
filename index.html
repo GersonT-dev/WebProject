@@ -3,50 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>JDM Legends</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: #ffeedd; margin: 0; }
-    h1 { text-align: center; font-size: 4em; margin: 0.2em 0; color: #b22222; font-style: italic;}
-    #main-bar { background: #ffeedd; padding: 1em; display: flex; justify-content: center; gap: 2em; border: 2px solid black; }
-    .contact-box { border: 2px solid black; padding: 0.5em; background: #fff; }
-    .social-box { border: 2px solid black; padding: 0.5em; background: #fff; display: flex; flex-direction: column; align-items: center; }
-    #car-list { margin: 2em auto; max-width: 900px; }
-    #car-list div { margin-bottom: 2em; background: #fff; border-radius: 12px; padding: 1em; box-shadow: 0 2px 8px #ccc; }
-    #car-list img { max-width: 300px; display: block; margin-bottom: 0.5em; border-radius: 4px; }
-  </style>
 </head>
 <body>
   <h1>JDM Legends</h1>
-  <div id="main-bar">
-    <div class="contact-box">
-      <div>Email: <a id="email-link" href="#">Email</a></div>
-      <div>Phone: <span id="phone-txt"></span></div>
-    </div>
-    <div class="social-box">
-      <span>Socials:</span>
-      <img id="social-img" src="" alt="" style="max-width:120px;">
-    </div>
-  </div>
   <div id="car-list"></div>
-  
   <script src="data/content.js"></script>
   <script>
-    // Render contact info
-    document.getElementById('email-link').textContent = contact.email;
-    document.getElementById('email-link').href = "mailto:" + contact.email;
-    document.getElementById('phone-txt').textContent = contact.phone;
+    // Check if cars is loaded
+    console.log(cars);
 
-    // Render social image
-    const socialImg = document.getElementById('social-img');
-    socialImg.src = socialImage.imageUrl;
-    socialImg.alt = socialImage.altText;
-
-    // Render cars
+    // Render cars and images
     const carList = document.getElementById('car-list');
     cars.forEach(car => {
       const carDiv = document.createElement('div');
       carDiv.innerHTML = `
         <h2>${car.name}</h2>
-        <img src="${car.imageUrl}" alt="${car.altText}">
+        <img src="${car.imageUrl}" alt="${car.altText}" style="max-width:300px;">
         <p>${car.description}</p>
       `;
       carList.appendChild(carDiv);

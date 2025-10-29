@@ -1,42 +1,47 @@
 // main.js
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Select the main content area
-  const main = document.querySelector("main");
-  
-  // Use a string to build all the car sections
-  let carHTML = ""; 
+    
+    // 1. Get the main content area and the template element
+    const main = document.querySelector("main");
+    const template = document.getElementById("car-template");
 
-  // Loop through the 'cars' array (defined in data/content.js)
-  if (Array.isArray(cars)) {
-    cars.forEach(car => {
-      // Build the HTML section for each car
-      carHTML += `
-        <section class="car-section">
-          <h2 class="section-title">${car.name}</h2>
-          <div class="car-content-grid">
-            <img src="${car.imageUrl}" alt="${car.altText}" class="car-image" />
-            <p class="section-text">${car.description}</p>
-          </div>
-        </section>
-      `;
-    });
-    // Inject all car sections into the main element
-    main.innerHTML = carHTML;
-  }
+    // Check if the cars data and template are available
+    if (Array.isArray(cars) && template) {
+        
+        // --- Car Content Injection using Template Cloning ---
+        cars.forEach(car => {
+            // Clone the content of the template
+            const clone = template.content.cloneNode(true);
 
-  // Inject footer info
-  const footer = document.querySelector("footer");
-  if (footer) {
-    footer.innerHTML = `
-      <div class="contact-info">
-        <p>Email: ${contact.email}</p>
-        <p>Phone: ${contact.phone}</p>
-      </div>
-      <div class="social-links">
-        <p>Socials:</p>
-        <img src="${socialImage.imageUrl}" alt="${socialImage.altText}" class="social-icon" />
-      </div>
-    `;
-  }
+            // Access the elements inside the clone using querySelector
+            const sectionTitle = clone.querySelector(".section-title");
+            const carImage = clone.querySelector(".car-image");
+            const sectionText = clone.querySelector(".section-text");
+
+            // Update the cloned elements with the car data
+            sectionTitle.textContent = car.name;
+            carImage.src = car.imageUrl;
+            carImage.alt = car.altText;
+            sectionText.textContent = car.description;
+
+            // Append the fully populated clone to the main element
+            main.appendChild(clone);
+        });
+    }
+
+    // --- Footer Injection ---
+    const footer = document.querySelector("footer");
+    if (footer && contact && socialImage) {
+        footer.innerHTML = `
+            <div class="contact-info">
+                <p>Email: ${contact.email}</p>
+                <p>Phone: ${contact.phone}</p>
+            </div>
+            <div class="social-links">
+                <p>Socials:</p>
+                <img src="${socialImage.imageUrl}" alt="${socialImage.altText}" class="social-icon" />
+            </div>
+        `;
+    }
 });

@@ -1,4 +1,4 @@
-// This file defines the data variables used by main.js
+// data/content.js
 
 // 1. Define the 'cars' array
 const cars = [
@@ -14,7 +14,7 @@ const cars = [
     imageUrl: "images/supra.avif",
     altText: "Toyota Supra MK4",
     description:
-      "Toyota Supra MK4 (A80, 1993–2002). Legendary Japanese sports car, famous for its 2JZ-GTE twin-turbo inline-6, incredible tuning potential, and sleek '90s styling. Became an icon through Fast & Furious and is considered one of the most capable tuner cars ever built."
+      "Toyota Supra MK4 (A80, 1993–2002). Legendary Japanese sports car, famous for its 2JZ-GTE twin-turbo inline-6, incredible tuning potential, and sleek ‘90s styling. Became an icon through Fast & Furious and is considered one of the most capable tuner cars ever built."
   },
   {
     name: "RX-7",

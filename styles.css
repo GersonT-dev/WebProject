@@ -66,8 +66,10 @@ main {
 	margin: 0 auto var(--spacing-default) auto;
 	padding: 10px;
 	display: inline-block;
-	border: 6px var(--color-background-header) solid;
-	background-color: transparent;
+	/* Changed border to primary color for better visibility */
+	border: 6px var(--color-primary) solid; 
+	/* Changed background to light color for contrast */
+	background-color: var(--color-text-light); 
 }
 
 .car-content-grid {
@@ -99,7 +101,8 @@ main {
 footer {
 	grid-area: footer;
 	background-color: var(--color-background-footer);
-	color: var(--color-text-light);
+	/* Changed color to dark for better contrast on bisque background */
+	color: var(--color-text-dark); 
 	padding: var(--spacing-default) 0;
 	border-top: 3px solid var(--color-secondary);
 	display: flex;

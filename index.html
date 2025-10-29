@@ -1,30 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JDM Legends</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/png" href="images/carlogo.jpg" />
+  <meta charset="UTF-8">
+  <title>JDM Legends</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    #car-list div { margin-bottom: 2em; }
+    #car-list img { max-width: 300px; display: block; margin-bottom: 0.5em; }
+    #contact { margin-top: 2em; }
+    #social { margin-top: 2em; }
+  </style>
 </head>
-
 <body>
-    <div id="page-grid">
-        <header>
-            <div class="brand-identity">
-                <h1>JDM Legends</h1>
-            </div>
-        </header>
+  <h1>Legendary JDM Cars</h1>
+  <div id="car-list"></div>
 
-        <main>
-            </main>
+  <div id="contact"></div>
+  <div id="social"></div>
 
-        <footer>
-            </footer>
-    </div>
-    <div id="car-list"></div>
-    <script src="data/content.js"></script>
-    <script src="main.js"></script>
+  <!-- Load your data JS file first -->
+  <script src="data/content.js"></script>
+  <script>
+    // Render cars
+    const carList = document.getElementById('car-list');
+    cars.forEach(car => {
+      const carDiv = document.createElement('div');
+      carDiv.innerHTML = `
+        <h2>${car.name}</h2>
+        <img src="${car.imageUrl}" alt="${car.altText}">
+        <p>${car.description}</p>
+      `;
+      carList.appendChild(carDiv);
+    });
+
+    // Render contact info
+    const contactDiv = document.getElementById('contact');
+    contactDiv.innerHTML = `
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:${contact.email}">${contact.email}</a></p>
+      <p>Phone: ${contact.phone}</p>
+    `;
+
+    // Render social image
+    const socialDiv = document.getElementById('social');
+    socialDiv.innerHTML = `
+      <h2>Follow Us</h2>
+      <img src="${socialImage.imageUrl}" alt="${socialImage.altText}" style="max-width:200px;">
+    `;
+  </script>
 </body>
 </html>
-

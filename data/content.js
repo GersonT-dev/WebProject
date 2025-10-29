@@ -1,5 +1,3 @@
-// data/content.js
-
 const cars = [
   {
     name: "Skyline",

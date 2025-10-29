@@ -1,48 +1,42 @@
-// JavaScript source code
-console.log("Hello World!" + `    this 
+// main.js
 
-
-id  so fun ${34}`);
-
-console.log(4 / 2);
-
-if (true) {
-    let x = 6;
-    const y = 8;
-    var z = 8;
-    console.log(x + y + z);
-
-    console.log("This is true");
-  
-}
 document.addEventListener("DOMContentLoaded", () => {
+  // Select the main content area
   const main = document.querySelector("main");
-  main.innerHTML = "";
+  
+  // Use a string to build all the car sections
+  let carHTML = ""; 
 
-  cars.forEach(car => {
-    const section = document.createElement("section");
-    section.classList.add("car-section");
-    section.innerHTML = `
-      <h2 class="section-title">${car.name}</h2>
-      <div class="car-content-grid">
-        <img src="${car.imageUrl}" alt="${car.altText}" class="car-image" />
-        <p class="section-text">${car.description}</p>
+  // Loop through the 'cars' array (defined in data/content.js)
+  if (Array.isArray(cars)) {
+    cars.forEach(car => {
+      // Build the HTML section for each car
+      carHTML += `
+        <section class="car-section">
+          <h2 class="section-title">${car.name}</h2>
+          <div class="car-content-grid">
+            <img src="${car.imageUrl}" alt="${car.altText}" class="car-image" />
+            <p class="section-text">${car.description}</p>
+          </div>
+        </section>
+      `;
+    });
+    // Inject all car sections into the main element
+    main.innerHTML = carHTML;
+  }
+
+  // Inject footer info
+  const footer = document.querySelector("footer");
+  if (footer) {
+    footer.innerHTML = `
+      <div class="contact-info">
+        <p>Email: ${contact.email}</p>
+        <p>Phone: ${contact.phone}</p>
+      </div>
+      <div class="social-links">
+        <p>Socials:</p>
+        <img src="${socialImage.imageUrl}" alt="${socialImage.altText}" class="social-icon" />
       </div>
     `;
-    main.appendChild(section);
-  });
-
-  // Add footer info
-  const footer = document.querySelector("footer");
-  footer.innerHTML = `
-    <div class="contact-info">
-      <p>Email: ${contact.email}</p>
-      <p>Phone: ${contact.phone}</p>
-    </div>
-    <div class="social-links">
-      <p>Socials:</p>
-      <img src="${socialImage.imageUrl}" alt="${socialImage.altText}" class="social-icon" />
-    </div>
-  `;
+  }
 });
-

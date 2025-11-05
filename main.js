@@ -44,4 +44,19 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `;
     }
+    // main.js
+
+[span_0](start_span)// 1. Get the element using a DOM access method[span_0](end_span)
+const myButton = document.getElementById("myButton");
+const messageElement = document.getElementById("message");
+
+[span_1](start_span)[span_2](start_span)// 2. Define the action (using a Named Function or Anonymous Function)[span_1](end_span)[span_2](end_span)
+function handleClick() {
+    [span_3](start_span)// Set the text content[span_3](end_span)
+    messageElement.textContent = "I was clicked!";
+}
+
+// 3. Attach the event listener (DOM Scripting method)
+myButton.addEventListener("click", handleClick);
+
 });

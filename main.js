@@ -17,15 +17,7 @@ function timeout() {
     setTimeout(timeout, 0);
   }
 }
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_MEASUREMENT_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'YOUR_GA_MEASUREMENT_ID');
-    </script>
+   
 function run() {
   // clear the log
   const log = document.querySelector("#log");

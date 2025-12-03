@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>jdm legends</title>
+
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/png" href="images/carlogo.jpg" />
 
@@ -13,70 +14,13 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-RJSQ7F47VJ');
     </script>
-
-    <!-- Minimal modal styles so it works without editing styles.css -->
-    <style>
-      /* Modal overlay and centering */
-      .modal {
-        display: none; /* hidden by default */
-        position: fixed;
-        inset: 0;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0,0,0,0.5);
-        z-index: 1000;
-      }
-      .modal[data-open="true"] {
-        display: flex;
-      }
-      .modal-dialog {
-        background: #fff;
-        color: #111;
-        padding: 1.25rem;
-        border-radius: 8px;
-        max-width: 480px;
-        width: calc(100% - 2rem);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-      }
-      .modal-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1rem;
-      }
-      .modal-title {
-        margin: 0;
-        font-size: 1.125rem;
-      }
-      .modal-body {
-        margin-top: 0.75rem;
-      }
-      .btn {
-        display: inline-block;
-        padding: 0.45rem 0.8rem;
-        border-radius: 6px;
-        border: none;
-        background: #0b72ff;
-        color: #fff;
-        cursor: pointer;
-        font-size: 0.95rem;
-      }
-      .btn:focus {
-        outline: 2px solid #0b72ff;
-        outline-offset: 2px;
-      }
-      .btn--secondary {
-        background: #e0e0e0;
-        color: #111;
-      }
-    </style>
 </head>
-    
+
 <body>
     <div id="page-grid">
+
         <header>
             <div class="brand-identity">
                 <h1>JDM Legends</h1>
@@ -89,7 +33,9 @@
                 <div class="car-content-grid">
                     <img src="images/skyline.jpg" alt="Nissan Skyline GT-R R34" class="car-image" />
                     <p class="section-text">
-                        Nissan Skyline GT-R R34 (1999–2002). Advanced for its time, with the RB26DETT twin-turbo inline-6, ATTESA all-wheel drive, and Super-HICAS four-wheel steering. A balance of t[...]
+                        Nissan Skyline GT-R R34 (1999–2002). Advanced for its time, with the RB26DETT twin-turbo inline-6,
+                        ATTESA all-wheel drive, and Super-HICAS four-wheel steering. A balance of tech and raw performance,
+                        nicknamed “Godzilla” for dominating motorsports and street culture.
                     </p>
                 </div>
             </section>
@@ -99,7 +45,9 @@
                 <div class="car-content-grid">
                     <img src="images/supra.avif" alt="Toyota Supra MK4" class="car-image" />
                     <p class="section-text">
-                        Toyota Supra MK4 (A80, 1993–2002). Legendary Japanese sports car, famous for its 2JZ-GTE twin-turbo inline-6, incredible tuning potential, and sleek ‘90s styling. Became an[...]
+                        Toyota Supra MK4 (A80, 1993–2002). Legendary Japanese sports car, famous for its 2JZ-GTE
+                        twin-turbo inline-6, incredible tuning potential, and sleek ‘90s styling. Became an icon through
+                        Fast & Furious and is considered one of the most capable tuner cars ever built.
                     </p>
                 </div>
             </section>
@@ -109,7 +57,9 @@
                 <div class="car-content-grid">
                     <img src="images/rx7.jpg" alt="Mazda RX-7 FD3S" class="car-image" />
                     <p class="section-text">
-                        Mazda RX-7 (FD3S, 1992–2002). Lightweight, agile sports car powered by the unique 13B-REW twin-turbo rotary engine. Known for razor-sharp handling, distinctive looks with pop[...]
+                        Mazda RX-7 (FD3S, 1992–2002). Lightweight, agile sports car powered by the unique 13B-REW
+                        twin-turbo rotary engine. Known for razor-sharp handling, distinctive looks with pop-up headlights,
+                        and its high-revving, smooth rotary performance.
                     </p>
                 </div>
             </section>
@@ -119,9 +69,11 @@
             <div class="contact-info">
                 <p>Email: turciosg@cua.edu</p>
                 <p>Phone: 202-569-5702</p>
-                <!-- New button to open the modal -->
-                <button id="open-modal-btn" class="btn" type="button">Click me</button>
+
+                <!-- SIMPLE BEGINNER BUTTON -->
+                <button id="open-modal-btn" class="btn">Click me</button>
             </div>
+
             <div class="social-links">
                 <p>Socials:</p>
                 <img src="images/social-media.jpg" alt="Social media icons" class="social-icon" />
@@ -129,20 +81,15 @@
         </footer>
     </div>
 
-    <!-- Modal markup -->
-    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title" data-open="false">
-      <div class="modal-dialog" role="document">
-        <div class="modal-header">
-          <h3 id="modal-title" class="modal-title">Modal Box</h3>
-          <button id="close-modal-btn" class="btn btn--secondary" type="button" aria-label="Close modal">Close</button>
+    <!-- SIMPLE MODAL -->
+    <div id="modal" class="modal">
+        <div class="modal-box">
+            <h3>Modal Box</h3>
+            <p>This is a modal box. Click the Close button or click outside to close it.</p>
+            <button id="close-modal-btn" class="btn btn--secondary">Close</button>
         </div>
-        <div class="modal-body">
-          <p>This is a modal box. Click the Close button, press Escape, or click outside the box to close it.</p>
-        </div>
-      </div>
     </div>
 
-    <!-- External scripts (modal logic moved to main.js; test log in content.js) -->
     <script src="main.js"></script>
     <script src="content.js"></script>
 </body>

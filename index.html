@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JDM Legends (Template)</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/png" href="images/carlogo.jpg" />
 </head>
 
 <body>
@@ -16,37 +15,33 @@
       </div>
     </header>
 
-    <div class="container">
-      <div class="layout">
-        <main>
-          <section id="gallery" class="selection">
-            <!-- gallery content -->
-          </section>
+    <main>
+      <section id="gallery" class="selection">
+        <!-- gallery content -->
+      </section>
 
-          <!-- Trigger button to open modal -->
-          <button id="modal-open" class="btn">Open Modal</button>
+      <!-- Trigger button to open modal -->
+      <button id="modal-open" class="btn">Open Modal</button>
 
-          <!-- Modal -->
-          <div id="modal" class="modal modal--hidden" role="dialog" aria-hidden="true" aria-labelledby="modal-title">
-            <div class="modal-wrapper">
-              <div class="modal-container" role="document">
-                <header class="modal-header">
-                  <h2 id="modal-title">Modal Header</h2>
-                  <button id="modal-close" class="modal-close" aria-label="Close modal">×</button>
-                </header>
-                <div class="modal-body">
-                  <p>This is the modal body.</p>
-                </div>
-                <footer class="modal-footer">
-                  <button id="modal-ok" class="btn">OK</button>
-                </footer>
-              </div>
+      <!-- Modal (hidden by default via class) -->
+      <div id="modal" class="modal modal--hidden" role="dialog" aria-hidden="true" aria-labelledby="modal-title">
+        <div class="modal-wrapper">
+          <div class="modal-container" role="document">
+            <header class="modal-header">
+              <h2 id="modal-title">Modal Header</h2>
+              <button id="modal-close" class="modal-close" aria-label="Close modal">×</button>
+            </header>
+            <div class="modal-body">
+              <p>This is the modal body.</p>
             </div>
+            <footer class="modal-footer">
+              <button id="modal-ok" class="btn">OK</button>
+            </footer>
           </div>
-
-        </main>
+        </div>
       </div>
-    </div>
+
+    </main>
 
     <footer>
       <button id="run" class="btn">Run</button>
@@ -74,13 +69,11 @@
     </section>
   </template>
 
+  <!-- Click me button and message -->
   <button id="myButton" class="btn">Click Me</button>
-  <p id="message"></p>
+  <p id="message" class="hidden"></p>
 
-  <!-- Keep your data/content.js if needed -->
   <script src="data/content.js"></script>
-
-  <!-- App script that includes modal logic -->
   <script src="main.js"></script>
 </body>
 </html>

@@ -148,35 +148,39 @@ footer {
 }
 
 
-.btn {
-    background-color: lightgray;
-    border: 1px solid gray;
-    padding: 6px 12px;
-    cursor: pointer;
-    color: black;
-}
 
-.btn--secondary {
-    background-color: #ddd;
-}
-
-/* Modal overlay */
 .modal {
-    display: none;
+    display: none;                 /* Hidden until opened */
     position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
+    inset: 0;                      /* top/right/bottom/left: 0 */
+    background: rgba(0,0,0,0.45);
+    z-index: 2000;
+}
+
+/* Make modal visible AND centered */
+.modal.open {
+    display: flex !important;      
     justify-content: center;
     align-items: center;
 }
 
-/* Modal box */
+/* -------- Modal Box ---------- */
 .modal-box {
-    background: white;
-    border: 2px solid black;
+    background: #fff;
+    border: 2px solid #000;
     padding: 20px;
-    width: 300px;
+    width: 340px;
+    max-width: calc(100% - 40px);
+    box-sizing: border-box;
+    border-radius: 10px;
     text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
 }
+
+.btn {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
 
 

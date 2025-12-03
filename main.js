@@ -1,17 +1,24 @@
+const modal = document.getElementById("modal");
 const openBtn = document.getElementById("open-modal-btn");
 const closeBtn = document.getElementById("close-modal-btn");
-const modal = document.getElementById("modal");
 
-openBtn.addEventListener("click", () => {
-    modal.style.display = "flex";
+function openModal() {
+    modal.classList.add("open");
+}
+
+function closeModal() {
+    modal.classList.remove("open");
+}
+
+openBtn.addEventListener("click", openModal);
+closeBtn.addEventListener("click", closeModal);
+
+// Close when clicking outside box
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
 });
 
-closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-});
-
-window.addEventListener("click", (event) => {
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
+// ESC key closes modal
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
 });

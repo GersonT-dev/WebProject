@@ -1,103 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJSQ7F47VJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RJSQ7F47VJ');
-</script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JDM Legends (Template)</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/png" href="images/carlogo.jpg" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JDM Legends (Template)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="images/carlogo.jpg" />
 </head>
 
 <body>
-    <div id="page-grid">
-        <header>
-            <div class="brand-identity">
-                <h1>JDM Legends</h1>
+  <div id="page-grid">
+    <header>
+      <div class="brand-identity">
+        <h1>JDM Legends</h1>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="layout">
+        <main>
+          <section id="gallery" class="selection">
+            <!-- gallery content -->
+          </section>
+
+          <!-- Trigger button to open modal -->
+          <button id="modal-open" class="btn">Open Modal</button>
+
+          <!-- Modal -->
+          <div id="modal" class="modal modal--hidden" role="dialog" aria-hidden="true" aria-labelledby="modal-title">
+            <div class="modal-wrapper">
+              <div class="modal-container" role="document">
+                <header class="modal-header">
+                  <h2 id="modal-title">Modal Header</h2>
+                  <button id="modal-close" class="modal-close" aria-label="Close modal">×</button>
+                </header>
+                <div class="modal-body">
+                  <p>This is the modal body.</p>
+                </div>
+                <footer class="modal-footer">
+                  <button id="modal-ok" class="btn">OK</button>
+                </footer>
+              </div>
             </div>
-        </header>
+          </div>
 
-        
-            <div class="container">
-                <div class="layout">
-                    <main>
-                        <section id="gallery" class="selecton">
-                        </section>section>
-                        <div id="modal" class"modal modal--hidden">
-                            <div class="moal-wrapper">
-                                <div class"modal-container">
-                                    <div class"modal-header">
-                                        Modal Header
-                                        <button id="modal-close">Close</button>butt
-                                    </div>
-                                    <div class="modal-body">
-                                        Modal Body
-                                    </div>
-                                    <div class="modal-footer">
-                                        Modal Footer
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                                  
-                    </main>
         </main>
-
-        <footer>
-                <button id="run">Run</button>
-<table>
-  <thead>
-    <tr>
-      <th>Previous</th>
-      <th>This</th>
-      <th>Actual delay</th>
-    </tr>
-  </thead>
-  <tbody id="log"></tbody>
-</table> 
-        </footer>
+      </div>
     </div>
 
-    <template id="car-template">
-        <section class="car-section">
-            <h2 class="section-title"></h2> 
-            <div class="car-content-grid">
-                <img src="" alt="" class="car-image" /> 
-                <p class="section-text"></p>
-            </div>
-        </section>
-    </template>
+    <footer>
+      <button id="run" class="btn">Run</button>
 
-    <button id="myButton">Click Me</button>
-    <p id="message"></p>
+      <table>
+        <thead>
+          <tr>
+            <th>Previous</th>
+            <th>This</th>
+            <th>Actual delay</th>
+          </tr>
+        </thead>
+        <tbody id="log"></tbody>
+      </table>
+    </footer>
+  </div>
 
-                    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_MEASUREMENT_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <template id="car-template">
+    <section class="car-section">
+      <h2 class="section-title"></h2>
+      <div class="car-content-grid">
+        <img src="" alt="" class="car-image" />
+        <p class="section-text"></p>
+      </div>
+    </section>
+  </template>
 
-      gtag('config', 'YOUR_GA_MEASUREMENT_ID');
-    </script>
+  <button id="myButton" class="btn">Click Me</button>
+  <p id="message"></p>
 
+  <!-- Keep your data/content.js if needed -->
+  <script src="data/content.js"></script>
 
-    <script src="data/content.js"></script>
-    <script src="main.js"></script>
+  <!-- App script that includes modal logic -->
+  <script src="main.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-

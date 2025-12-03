@@ -26,13 +26,14 @@
       <!-- Modal (hidden by default via class) -->
       <div id="modal" class="modal modal--hidden" role="dialog" aria-hidden="true" aria-labelledby="modal-title">
         <div class="modal-wrapper">
-          <div class="modal-container" role="document">
+          <div class="modal-container" role="document" aria-modal="true">
             <header class="modal-header">
               <h2 id="modal-title">Modal Header</h2>
               <button id="modal-close" class="modal-close" aria-label="Close modal">×</button>
             </header>
             <div class="modal-body">
               <p>This is the modal body.</p>
+              <p>You can put any content here (form, details, images, etc.).</p>
             </div>
             <footer class="modal-footer">
               <button id="modal-ok" class="btn">OK</button>
@@ -44,18 +45,45 @@
     </main>
 
     <footer>
-      <button id="run" class="btn">Run</button>
+      <!-- Contact box moved to footer -->
+      <section id="contact-box" class="contact-box">
+        <h3>Contact</h3>
+        <form id="contact-form">
+          <label>
+            Email
+            <input type="email" id="contact-email" name="email" placeholder="you@example.com" required>
+          </label>
+          <label>
+            Phone
+            <input type="tel" id="contact-phone" name="phone" placeholder="+1 555 555 5555">
+          </label>
+          <label>
+            Message
+            <textarea id="contact-message" name="message" rows="3" placeholder="Your message"></textarea>
+          </label>
+          <div class="contact-actions">
+            <button type="submit" class="btn">Send</button>
+            <button type="button" id="contact-open-modal" class="btn alt">Open Modal</button>
+          </div>
+        </form>
+        <div id="contact-status" class="contact-status" aria-live="polite"></div>
+      </section>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Previous</th>
-            <th>This</th>
-            <th>Actual delay</th>
-          </tr>
-        </thead>
-        <tbody id="log"></tbody>
-      </table>
+      <!-- Run/demo table -->
+      <div class="run-area">
+        <button id="run" class="btn">Run</button>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Previous</th>
+              <th>This</th>
+              <th>Actual delay (ms)</th>
+            </tr>
+          </thead>
+          <tbody id="log"></tbody>
+        </table>
+      </div>
     </footer>
   </div>
 
@@ -71,7 +99,7 @@
 
   <!-- Click me button and message -->
   <button id="myButton" class="btn">Click Me</button>
-  <p id="message" class="hidden"></p>
+  <p id="message" class="hidden" aria-live="polite"></p>
 
   <script src="data/content.js"></script>
   <script src="main.js"></script>
